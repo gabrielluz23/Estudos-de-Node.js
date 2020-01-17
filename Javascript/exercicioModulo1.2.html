@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <button id="addQuadrado">adicionar Quadrado</button>
+  </div>
+  <div id="quadrados"  >
+    <div
+     class="quadrados"></div
+      >
+  </div>
+  
+  <script>
+  var  i = 0;
+  var addQuadrado = document.getElementById('addQuadrado');
+  var quadrado = document.getElementsByClassName('quadrados')[i];
+  addQuadrado.onclick = function () {
+
+    newQuadrado = document.createElement('div');
+    newQuadrado.setAttribute('class','quadrados');
+
+    var containerElement = document.querySelector('#quadrados');
+    containerElement.appendChild(newQuadrado);
+    let quadrado = document.getElementsByClassName('quadrados')[i];
+    quadrado.style.width = '100px';
+    quadrado.style.height ='100px';
+    quadrado.style.backgroundColor = 'red';
+    quadrado.style.marginTop = '10px';
+    quadrado.addEventListener("mouseover", () => {
+    let newColor = getRandomColor();
+    quadrado.style.backgroundColor = newColor;
+  });
+    i++;
+  }
+
+
+
+
+  function getRandomColor() {
+ var letters = "0123456789ABCDEF";
+ var color = "#";
+ for (var i = 0; i < 6; i++) {
+ color += letters[Math.floor(Math.random() * 16)];
+ }
+ return color;
+}
+var newColor = getRandomColor(); 
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div>
+    <input type="text" name="nome" id="nome" />
+    <button class="button">Adicionar</button>
+  </div>
+  <div id="linkedin">
+    <button class="button" name="linkedin"> mostar linkedin</button>
+  </div>
+
+  <script>
+    var linkElement = document.createElement('a');
+    linkElement.setAttribute('href','https://www.linkedin.com/in/gabriel-yago/');
+    
+    var textElement = document.createTextNode('Acessar Linkedin');
+    linkElement.appendChild(textElement);
+    
+    var btnLinkedin = document.querySelector('button[name=linkedin]');
+    
+    btnLinkedin.onclick = function() {
+      var containerElement = document.querySelector('#linkedin');
+      containerElement.appendChild(linkElement);
+    }
+
+    var btn = document.querySelector('button.button');
+
+    btn.onclick = function () {
+      var nome = document.getElementById('nome');
+      var texto = nome.value;
+      console.log(texto);
+    }
+  </script>
+
+</body>
+
+</html>

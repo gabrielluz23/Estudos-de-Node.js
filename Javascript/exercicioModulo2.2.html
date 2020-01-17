@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" name="nome" id="nome">
+  <input type="button" onclick="adicionar()" value="Adicionar">
+  <ul class="lista">
+
+  </ul>
+  
+  <script>
+let i = 0;
+    var nomes = ["Diego", "Gabriel", "Lucas"];
+    lista = document.querySelector('.lista');
+
+    function adicionar() {
+      var novoNome = document.getElementById('nome');
+      var nome = novoNome.value;
+
+      newNome = document.createElement('li');
+      newNome.setAttribute('name',nome);
+      var textElement = document.createTextNode(nome);
+      newNome.appendChild(textElement);
+      var containElement = document.querySelector('.lista');
+      containElement.appendChild(newNome);
+      novoNome.value = "";
+
+  
+}
+ 
+    for(i = 0; i < nomes.length; i++)
+{
+  newNome = document.createElement('li');
+  newNome.setAttribute('name',nomes[0]);
+  var textElement = document.createTextNode(nomes[i]);
+  newNome.appendChild(textElement);
+  var containElement = document.querySelector('.lista');
+  containElement.appendChild(newNome);
+}
+
+
+  </script>
+</body>
+</html>
